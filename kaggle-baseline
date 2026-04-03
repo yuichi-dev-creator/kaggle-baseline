@@ -1,0 +1,5 @@
+def preprocess(df):
+    # 最小構成（安全版）
+    if "Rainfall_mm" in df.columns and "Previous_Irrigation_mm" in df.columns:
+        df["water_balance"] = df["Rainfall_mm"] - df["Previous_Irrigation_mm"]
+    return df
